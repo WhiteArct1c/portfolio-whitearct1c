@@ -4,9 +4,14 @@ import {
     Container,
     Page,
     Image,
-    Media   
+    Media,
+    Text  
 } from "./styles"
 
+import logo from '../../assets/logo.svg'
+import linkedin from '../../assets/linkedin.svg'
+import github from '../../assets/github.svg'
+import { motion } from "framer-motion"
 
 export const Main: React.FC = () => {
     return(
@@ -16,16 +21,35 @@ export const Main: React.FC = () => {
                 <Btn>My Projects</Btn>
                 <Btn>Contact me</Btn>
             </Navbar>
-            <Container display="flex-column" justify="center" items="center">
-                <Image src="" alt="" width="100px" height="100px"/>
-                <Container display="flex-row" justify="center" items="center">
-                    <Media href="">
-                        <Image src="" alt="linkedin logo" width="" height=""/>
-                    </Media>
-                    <Media href="">
-                        <Image src="" alt="github logo" width="" height=""/>
-                    </Media>
-                </Container>
+
+            <Container display="flex" direction="column" justify="center" items="center">
+                
+                <motion.div
+                    initial={{ opacity: 0, scale: 1 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ duration: 1.5 }}
+                >
+                    <Container display="flex" direction="column" justify="center" items="center">
+                        <Image src={logo} alt="logo portfolio whitearct1c" width="350px" height="318px"/>
+                        <Text>WhiteArct1c</Text>
+                    </Container>
+                </motion.div>
+
+                <motion.div 
+                    initial={{opacity: 0}}
+                    animate={{opacity: 1}}
+                    transition={{duration: 1.5, delay: 0.5}}
+                >
+                    <Container display="flex" direction="row"  justify="center" items="center" width="117px" height="42.46px" gap="30.97px">
+                        <Media href="https://www.linkedin.com/in/whitearct1c/" target='_blank'>
+                            <Image src={linkedin} alt="linkedin logo" width="" height=""/>
+                        </Media>
+                        <Media href="https://github.com/WhiteArct1c" target='_blank'>
+                            <Image src={github} alt="github logo" width="" height=""/>
+                        </Media>
+                    </Container>
+                </motion.div>
+                
             </Container>
         </Page>
     );

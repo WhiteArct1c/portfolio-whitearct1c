@@ -21,8 +21,7 @@ export const Main: React.FC = () => {
                 <Btn>My Projects</Btn>
                 <Btn>Contact me</Btn>
             </Navbar>
-
-            <Container display="flex" direction="column" justify="center" items="center">
+            <Container display="flex" direction="column" justify="center" items="center" mt="270px" gap="140px">
                 
                 <motion.div
                     initial={{ opacity: 0, scale: 1 }}
@@ -30,8 +29,13 @@ export const Main: React.FC = () => {
                     transition={{ duration: 1.5 }}
                 >
                     <Container display="flex" direction="column" justify="center" items="center">
-                        <Image src={logo} alt="logo portfolio whitearct1c" width="350px" height="318px"/>
-                        <Text>WhiteArct1c</Text>
+                        <motion.div 
+                            transition={{y:{ duration: .9, yoyo: Infinity}}}
+                            animate={{y:['0%', '3%']}}
+                        >
+                            <Image src={logo} alt="logo portfolio whitearct1c" width="350px" height="318px"/>
+                        </motion.div>
+                        <Text>&lt;WhiteArct1c&gt;</Text>
                     </Container>
                 </motion.div>
 

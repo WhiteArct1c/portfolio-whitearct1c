@@ -7,6 +7,7 @@ interface ContainerProps{
     items: string;
     width?:string;
     height?:string;
+    mt?:string;
     gap?:string;
 }
 
@@ -43,7 +44,8 @@ export const Navbar = styled.nav`
     border-radius: 0px 0px 100px 100px;
 
     width: 100%;
-    height: 110px;
+    height: 100px;
+    
 `
 export const Btn = styled.button<BtnProps>`
     
@@ -86,12 +88,13 @@ export const Container = styled.div<ContainerProps>`
     width: ${props => props.width ? props.width : null};
     height: ${props => props.height ? props.height : null};
 
+    margin-top: ${props => props.mt ? props.mt : null};
+
 `
 
 export const Image = styled.img<ImageProps>`
     width: ${props => props.width};
     height: ${props => props.height};
-    margin-top: 279px;
 `
 
 export const Media = styled.a`
